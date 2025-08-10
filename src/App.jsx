@@ -1,4 +1,4 @@
-import { ThemeToggle } from './components/ThemeToggle';
+import { ThemeToggle } from './components/ThemeToggle'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <h1 className="text-3xl font-bold">Hello world!</h1>
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
