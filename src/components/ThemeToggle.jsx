@@ -1,37 +1,98 @@
 import { useState, useEffect } from 'react'
+import {
+  getStoredTheme,
+  setStoredTheme,
+  getEffectiveTheme,
+  THEMES,
+  cn,
+} from '@/lib'
 
+/**
+ * ThemeToggle Component
+ *
+ * Simple theme toggle using existing utilities from @/lib
+ * - Uses getStoredTheme/setStoredTheme for persistence
+ * - Uses getEffectiveTheme for system theme resolution
+ * - Uses cn() for conditional class names
+ * - Uses global CSS classes for styling
+ */
 export function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [currentTheme, setCurrentTheme] = useState(THEMES.SYSTEM)
 
   useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!localStorage.theme &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      setDarkMode(true)
-      document.documentElement.classList.add('dark')
+    // Initialize from storage and apply theme
+    const storedTheme = getStoredTheme()
+    setCurrentTheme(storedTheme)
+
+    const applyTheme = () => {
+      const effectiveTheme = getEffectiveTheme()
+      document.documentElement.classList.toggle(
+        'dark',
+        effectiveTheme === THEMES.DARK
+      )
     }
+
+    applyTheme()
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleSystemThemeChange = () => {
+      if (getStoredTheme() === THEMES.SYSTEM) {
+        applyTheme()
+      }
+    }
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange)
+    return () =>
+      mediaQuery.removeEventListener('change', handleSystemThemeChange)
   }, [])
 
   const toggleTheme = () => {
-    const newDarkMode = !darkMode
-    setDarkMode(newDarkMode)
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.theme = 'dark'
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.theme = 'light'
+    // Cycle through themes: Light → Dark → System → Light...
+    const newTheme =
+      currentTheme === THEMES.LIGHT
+        ? THEMES.DARK
+        : currentTheme === THEMES.DARK
+          ? THEMES.SYSTEM
+          : THEMES.LIGHT
+
+    setCurrentTheme(newTheme)
+    setStoredTheme(newTheme)
+
+    // Apply theme immediately - resolve the new theme, not the stored one
+    const effectiveTheme =
+      newTheme === THEMES.SYSTEM
+        ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? THEMES.DARK
+          : THEMES.LIGHT
+        : newTheme
+
+    document.documentElement.classList.toggle(
+      'dark',
+      effectiveTheme === THEMES.DARK
+    )
+  }
+
+  const getThemeIcon = () => {
+    switch (currentTheme) {
+      case THEMES.LIGHT:
+        return '☀️'
+      case THEMES.DARK:
+        return '🌙'
+      case THEMES.SYSTEM:
+        return '💻'
+      default:
+        return '🌙'
     }
   }
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"
+      className={cn('btn btn-secondary')}
+      title={`Current theme: ${currentTheme}`}
     >
-      {darkMode ? '☀️' : '🌙'}
+      <span className="text-lg">{getThemeIcon()}</span>
     </button>
   )
 }

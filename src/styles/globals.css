@@ -2,25 +2,40 @@
 
 /* Root variables for light theme */
 :root {
-  /* Colors - Light Theme */
-  --color-background: #ffffff;
-  --color-foreground: #0f0f0f;
-  --color-muted: #f5f5f5;
-  --color-muted-foreground: #737373;
-  --color-border: #e5e5e5;
-  --color-input: #ffffff;
-  --color-primary: #0f0f0f;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #f5f5f5;
-  --color-secondary-foreground: #0f0f0f;
-  --color-accent: #f5f5f5;
-  --color-accent-foreground: #0f0f0f;
-  --color-destructive: #ef4444;
+  /* Colors - Light Theme - Modern, clean palette */
+  --color-background: #ffffff;        /* Pure white background */
+  --color-foreground: #09090b;        /* Near-black for text */
+  --color-muted: #f4f4f5;            /* Light gray for muted areas */
+  --color-muted-foreground: #71717a;  /* Medium gray for secondary text */
+  --color-border: #e4e4e7;           /* Subtle border color */
+  --color-input: #ffffff;            /* Input background */
+  
+  /* Primary colors - Modern blue */
+  --color-primary: #2563eb;          /* Blue primary */
+  --color-primary-foreground: #ffffff; /* White text on primary */
+  
+  /* Secondary colors */
+  --color-secondary: #f4f4f5;        /* Light gray secondary */
+  --color-secondary-foreground: #09090b; /* Dark text on secondary */
+  
+  /* Accent colors - Purple accent */
+  --color-accent: #7c3aed;           /* Purple accent */
+  --color-accent-foreground: #ffffff; /* White text on accent */
+  
+  /* Status colors */
+  --color-destructive: #dc2626;      /* Red for errors */
   --color-destructive-foreground: #ffffff;
-  --color-success: #22c55e;
+  --color-success: #16a34a;          /* Green for success */
   --color-success-foreground: #ffffff;
-  --color-warning: #f59e0b;
+  --color-warning: #ca8a04;          /* Amber for warnings */
   --color-warning-foreground: #ffffff;
+  
+  /* Light theme specific colors */
+  --color-card: #ffffff;             /* Card backgrounds */
+  --color-card-foreground: #09090b;  /* Card text */
+  --color-popover: #ffffff;          /* Popover backgrounds */
+  --color-popover-foreground: #09090b; /* Popover text */
+  --color-ring: #2563eb;             /* Focus ring color */
   
   /* Typography */
   --font-family-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -79,33 +94,49 @@
   --transition-slow: 300ms ease;
 }
 
-/* Dark theme variables */
+/* Dark theme variables - Modern, eye-friendly dark theme */
 .dark {
-  --color-background: #0f0f0f;
-  --color-foreground: #f5f5f5;
-  --color-muted: #1a1a1a;
-  --color-muted-foreground: #a3a3a3;
-  --color-border: #262626;
-  --color-input: #1a1a1a;
-  --color-primary: #f5f5f5;
-  --color-primary-foreground: #0f0f0f;
-  --color-secondary: #1a1a1a;
-  --color-secondary-foreground: #f5f5f5;
-  --color-accent: #1a1a1a;
-  --color-accent-foreground: #f5f5f5;
-  --color-destructive: #dc2626;
-  --color-destructive-foreground: #ffffff;
-  --color-success: #16a34a;
-  --color-success-foreground: #ffffff;
-  --color-warning: #d97706;
-  --color-warning-foreground: #ffffff;
+  /* Background colors - Rich dark blues and grays for better visual comfort */
+  --color-background: #0a0a0f;        /* Deep navy-black for main background */
+  --color-foreground: #e4e4e7;        /* Soft white for primary text */
+  --color-muted: #18181b;             /* Dark gray for muted backgrounds */
+  --color-muted-foreground: #a1a1aa;  /* Medium gray for secondary text */
+  --color-border: #27272a;            /* Subtle border color */
+  --color-input: #18181b;             /* Input background */
   
-  /* Dark theme shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+  /* Primary colors - Modern blue accent */
+  --color-primary: #3b82f6;           /* Modern blue primary */
+  --color-primary-foreground: #ffffff; /* White text on primary */
+  
+  /* Secondary colors - Subtle gray variations */
+  --color-secondary: #1f1f23;         /* Slightly lighter than muted */
+  --color-secondary-foreground: #e4e4e7; /* Light text on secondary */
+  
+  /* Accent colors - Purple accent for highlights */
+  --color-accent: #8b5cf6;            /* Purple accent */
+  --color-accent-foreground: #ffffff;  /* White text on accent */
+  
+  /* Status colors - Adjusted for dark theme */
+  --color-destructive: #ef4444;       /* Red for errors/danger */
+  --color-destructive-foreground: #ffffff;
+  --color-success: #10b981;           /* Green for success */
+  --color-success-foreground: #ffffff;
+  --color-warning: #f59e0b;           /* Amber for warnings */
+  --color-warning-foreground: #000000; /* Dark text on warning */
+  
+  /* Enhanced shadows for dark theme - More pronounced for depth */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.6), 0 1px 2px -1px rgb(0 0 0 / 0.6);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.6), 0 2px 4px -2px rgb(0 0 0 / 0.6);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+  
+  /* Dark theme specific colors for better component styling */
+  --color-card: #18181b;              /* Card backgrounds */
+  --color-card-foreground: #e4e4e7;   /* Card text */
+  --color-popover: #18181b;           /* Popover/dropdown backgrounds */
+  --color-popover-foreground: #e4e4e7; /* Popover text */
+  --color-ring: #3b82f6;              /* Focus ring color */
 }
 
 /* Responsive Breakpoint Utilities */
@@ -119,23 +150,132 @@
 }
 
 /* Global utility classes using custom properties */
+/* Background utilities */
 .bg-background { background-color: var(--color-background); }
 .bg-foreground { background-color: var(--color-foreground); }
 .bg-muted { background-color: var(--color-muted); }
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }
 .bg-accent { background-color: var(--color-accent); }
+.bg-card { background-color: var(--color-card); }
+.bg-popover { background-color: var(--color-popover); }
+.bg-destructive { background-color: var(--color-destructive); }
+.bg-success { background-color: var(--color-success); }
+.bg-warning { background-color: var(--color-warning); }
 
+/* Text color utilities */
 .text-background { color: var(--color-background); }
 .text-foreground { color: var(--color-foreground); }
 .text-muted-foreground { color: var(--color-muted-foreground); }
 .text-primary { color: var(--color-primary); }
 .text-primary-foreground { color: var(--color-primary-foreground); }
 .text-secondary-foreground { color: var(--color-secondary-foreground); }
+.text-accent { color: var(--color-accent); }
 .text-accent-foreground { color: var(--color-accent-foreground); }
+.text-card-foreground { color: var(--color-card-foreground); }
+.text-popover-foreground { color: var(--color-popover-foreground); }
+.text-destructive { color: var(--color-destructive); }
+.text-destructive-foreground { color: var(--color-destructive-foreground); }
+.text-success { color: var(--color-success); }
+.text-success-foreground { color: var(--color-success-foreground); }
+.text-warning { color: var(--color-warning); }
+.text-warning-foreground { color: var(--color-warning-foreground); }
 
+/* Border utilities */
 .border-border { border-color: var(--color-border); }
 .border-input { border-color: var(--color-input); }
+.border-primary { border-color: var(--color-primary); }
+.border-secondary { border-color: var(--color-secondary); }
+.border-accent { border-color: var(--color-accent); }
+.border-destructive { border-color: var(--color-destructive); }
+.border-success { border-color: var(--color-success); }
+.border-warning { border-color: var(--color-warning); }
+
+/* Ring utilities for focus states */
+.ring-ring { 
+  --tw-ring-color: var(--color-ring);
+  box-shadow: 0 0 0 2px var(--color-ring);
+}
+
+/* Modern component utilities */
+.card {
+  background-color: var(--color-card);
+  color: var(--color-card-foreground);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-6);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  padding: var(--spacing-2) var(--spacing-4);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+  border-color: var(--color-accent);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-foreground);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-accent);
+  color: var(--color-accent-foreground);
+}
+
+/* Gradient utilities for modern effects */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
 /* Font family utilities */
 .font-sans { font-family: var(--font-family-sans); }
@@ -190,6 +330,7 @@
 html {
   font-family: var(--font-family-sans);
   line-height: var(--line-height-normal);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -198,16 +339,104 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color var(--transition-base), color var(--transition-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Focus styles */
+/* Enhanced focus styles with ring */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-ring);
+  border-radius: var(--radius-md);
 }
 
-/* Selection styles */
+/* Better selection styles */
 ::selection {
   background-color: var(--color-primary);
   color: var(--color-primary-foreground);
+}
+
+/* Improved button base styles */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Enhanced heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+/* Improved link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Better form element styles */
+input, textarea, select {
+  background-color: var(--color-input);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: inherit;
+  padding: var(--spacing-2) var(--spacing-3);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+  outline: none;
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted-foreground);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
 }
