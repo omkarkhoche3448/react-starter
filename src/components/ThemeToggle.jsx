@@ -4,6 +4,8 @@ import {
   setStoredTheme,
   getEffectiveTheme,
   THEMES,
+  THEME_ICONS,
+  THEME_LABELS,
   cn,
 } from '@/lib'
 
@@ -74,23 +76,14 @@ export function ThemeToggle() {
   }
 
   const getThemeIcon = () => {
-    switch (currentTheme) {
-      case THEMES.LIGHT:
-        return '☀️'
-      case THEMES.DARK:
-        return '🌙'
-      case THEMES.SYSTEM:
-        return '💻'
-      default:
-        return '🌙'
-    }
+    return THEME_ICONS[currentTheme] || THEME_ICONS[THEMES.DARK]
   }
 
   return (
     <button
       onClick={toggleTheme}
       className={cn('btn btn-secondary')}
-      title={`Current theme: ${currentTheme}`}
+      title={THEME_LABELS[currentTheme] || THEME_LABELS[THEMES.DARK]}
     >
       <span className="text-lg">{getThemeIcon()}</span>
     </button>
