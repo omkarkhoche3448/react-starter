@@ -1,10 +1,9 @@
 {
-  "name": "my-project",
+  "name": "react-starter-pack",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "setup": "node setup-env.js",
     "dev": "vite --mode development",
     "dev:prod": "vite --mode production",
     "build": "vite build --mode production",
